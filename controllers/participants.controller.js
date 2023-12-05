@@ -57,10 +57,8 @@ class ParticipantsController {
                         Видалити реєстрацію
                     </a>
                 `;
-            console.log('test');
 
             await sendEmail(email, letterSubject, newLetterHtml);
-            console.log('test2');
 
             await sendToTelegram(createLeadMsg(data, event));
 

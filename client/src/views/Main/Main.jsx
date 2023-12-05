@@ -34,10 +34,9 @@ const Main = () => {
             ) : (
                 <div className='main container'>
                     <h2 className='main__title'>{pageInfo.title}</h2>
-                    <p className='main__description'>{pageInfo.description}</p>
-                    {/*<Link to='/team-building' className='button button--border'>*/}
-                    {/*    Корпоративи*/}
-                    {/*</Link>*/}
+                    <h1 className='main__description'>
+                        {pageInfo.description}
+                    </h1>
                     <Link to='/registration' className='button button--accent'>
                         Записатись на тренування
                     </Link>

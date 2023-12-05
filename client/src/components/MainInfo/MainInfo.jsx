@@ -14,7 +14,7 @@ const MainInfo = ({ data }) => {
                 to='/all-courses'
                 className='button button--accent button--center button--fifteen'
             >
-                Усі курси
+                Усі послуги
             </Link>
         </div>
     );
