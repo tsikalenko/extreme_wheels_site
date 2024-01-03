@@ -9,8 +9,6 @@ const sendEmail = async (subscriberMail, letterSubject, letterHtml) => {
         },
     });
 
-    console.log('create transport');
-
     const mailOptions = {
         from: process.env.MAIL_USER,
         to: subscriberMail,

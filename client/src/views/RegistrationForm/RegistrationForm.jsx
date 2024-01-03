@@ -6,25 +6,12 @@ import { createParticipant } from '../../api/paticipantsAPI';
 
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
-import { getUrl } from '../../api/urlsAPI';
 
 const RegistrationForm = () => {
     const { eventId } = useParams();
     const [eventInfo, setEventInfo] = useState({});
     const [isErrorLoading, setIsErrorLoading] = useState(false);
     const navigate = useNavigate();
-
-    const [payBtn, setPayBtn] = useState('');
-
-    useEffect(() => {
-        (async () => {
-            try {
-                // setPayBtn((await getUrl('mainPayBtn')).url);
-            } catch (err) {
-                setIsErrorLoading(true);
-            }
-        })();
-    }, []);
 
     useEffect(() => {
         (async () => {
@@ -74,7 +61,6 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
-        // const resultPayBtn = eventInfo.payBtn || payBtn;
         const letterHtml =
             eventInfo.letterHtml +
             `
@@ -96,7 +82,7 @@ const RegistrationForm = () => {
                     margin: 20px auto;
                     width: 50%;
                     border: 2px solid transparent;
-                    background-color: #808000;
+                    background-color: #ffcc33;
                     color: #000000;
                     text-decoration: none;'>
                 Додати в мій Google Calendar

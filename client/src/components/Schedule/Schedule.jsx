@@ -38,7 +38,7 @@ const Schedule = ({ type, calendar, isPage }) => {
             if (index < 3) {
                 const img = event.img
                     ? event.img
-                    : 'https://res.cloudinary.com/dv6xzqwka/image/upload/v1666514365/schedule1_jfg7kn.jpg';
+                    : 'https://res.cloudinary.com/dd3fd4eey/image/upload/v1701766811/main_gallery/main_gallery_1.jpg';
                 return (
                     <Link
                         key={event._id}
@@ -65,7 +65,7 @@ const Schedule = ({ type, calendar, isPage }) => {
     };
 
     return (
-        <>
+        <div className='container container--top'>
             {isErrorLoading ? (
                 <h2 className='error'>
                     Нажаль, виникла проблема зі завантаженням сторінки,
@@ -89,7 +89,7 @@ const Schedule = ({ type, calendar, isPage }) => {
                     )}
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

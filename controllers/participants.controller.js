@@ -39,7 +39,7 @@ class ParticipantsController {
             const newLetterHtml =
                 letterHtml +
                 `
-                    <a href='https://military-school.herokuapp.com/participant/delete/${participant._id}' 
+                    <a href='https://localhost:3000/participant/delete/${participant._id}' 
                     target='_blank' 
                     style='font-size: 18px;
                     display: block;
@@ -52,7 +52,7 @@ class ParticipantsController {
                     margin: 20px auto;
                     width: 50%;
                     border: 2px solid #000000;
-                    color: #808000;
+                    color: #ffcc33;
                     text-decoration: none;''>
                         Видалити реєстрацію
                     </a>

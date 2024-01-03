@@ -327,18 +327,6 @@ const EventForm = () => {
                             </p>
                         )}
 
-                        <div className='edit__item'>
-                            <label className='edit__label'>
-                                Платіжна кнопка:
-                            </label>
-                            <input
-                                type='text'
-                                {...register('payBtn')}
-                                placeholder='like: bb727bef0c1df'
-                                className='edit__input edit__input--text'
-                            />
-                        </div>
-
                         {renderFields()}
 
                         {error && <p className='edit__error'>{error}</p>}
