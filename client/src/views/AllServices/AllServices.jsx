@@ -53,7 +53,7 @@ const AllServices = () => {
                                 to='/registration'
                                 className='button button--accent button--center button--fifteen'
                             >
-                                Записатись на тренуванняч
+                                Записатись на тренування
                             </Link>
                         </div>
                     </div>
