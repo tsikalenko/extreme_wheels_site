@@ -39,7 +39,7 @@ class ParticipantsController {
             const newLetterHtml =
                 letterHtml +
                 `
-                    <a href='https://localhost:3000/participant/delete/${participant._id}' 
+                    <a href='https://${process.env.URL}/participant/delete/${participant._id}' 
                     target='_blank' 
                     style='font-size: 18px;
                     display: block;
@@ -71,9 +71,9 @@ class ParticipantsController {
     async readParticipant(req, res) {
         try {
             const { id } = req.query;
-            const event = await Participants.findOne({ _id: id });
-            if (event) {
-                return res.json(event);
+            const participant = await Participants.findOne({ _id: id });
+            if (participant) {
+                return res.json(participant);
             }
             return res.status(400).json({ message: 'Event not found' });
         } catch (err) {
