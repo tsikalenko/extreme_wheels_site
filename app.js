@@ -32,7 +32,6 @@ app.use('/api/participants', participantsRouter);
 app.use('/api/mailer', mailer);
 app.use('/api/payment', payment);
 
-console.log(process.env.DB_USER);
 mongoose
     .connect(
         // `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_URL}/${process.env.DB_NAME}?retryWrites=true&w=majority`,

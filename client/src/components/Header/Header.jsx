@@ -96,39 +96,14 @@ const Header = () => {
                             Послуги
                         </Link>
                     </li>
-                    {/*<li className='nav__item'>*/}
-                    {/*    <Link to='/team-building' className='nav__link'>*/}
-                    {/*        Корпоративи*/}
-                    {/*    </Link>*/}
-                    {/*</li>*/}
                     <li className='nav__item'>
                         <Link to='/contacts' className='nav__link'>
                             Контакти
                         </Link>
                     </li>
-                    {/*<li className='nav__item nav__item--mobile nav__item--colored'>*/}
-                    {/*    {!isErrorLoading && (*/}
-                    {/*        <a*/}
-                    {/*            href={`https://secure.wayforpay.com/button/${payBtn}`}*/}
-                    {/*            className='nav__link'*/}
-                    {/*            rel='noreferrer'*/}
-                    {/*        >*/}
-                    {/*            Оплата*/}
-                    {/*        </a>*/}
-                    {/*    )}*/}
-                    {/*</li>*/}
                 </ul>
 
                 <div className='header__buttons'>
-                    {/*{!isErrorLoading && (*/}
-                    {/*    <a*/}
-                    {/*        href={`https://secure.wayforpay.com/button/${payBtn}`}*/}
-                    {/*        className='header__button header__registration--text'*/}
-                    {/*        rel='noreferrer'*/}
-                    {/*    >*/}
-                    {/*        Оплата*/}
-                    {/*    </a>*/}
-                    {/*)}*/}
                     <button
                         className=' header__button'
                         onClick={() => {

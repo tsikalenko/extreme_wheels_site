@@ -25,7 +25,7 @@ const EventForm = () => {
         register,
         handleSubmit,
         control,
-        formState: { errors },
+        formState: { errors, isSubmitting, isDirty, isValid },
         reset,
     } = useForm({ defaultValues: initialState });
 
@@ -343,6 +343,7 @@ const EventForm = () => {
                             type='submit'
                             className='button button--accent'
                             value={eventID ? 'Оновити' : 'Створити'}
+                            disabled={isSubmitting || !isDirty || !isValid}
                         />
                     </form>
                 </div>

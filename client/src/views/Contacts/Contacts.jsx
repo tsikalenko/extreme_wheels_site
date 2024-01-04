@@ -84,18 +84,6 @@ const Contacts = () => {
                         </span>
                     </a>
 
-                    {/*<a*/}
-                    {/*    href={`viber://chat/?number=%2B${pageInfo.viber}`}*/}
-                    {/*    target='_blank'*/}
-                    {/*    className='contacts__social'*/}
-                    {/*    rel='noreferrer'*/}
-                    {/*>*/}
-                    {/*    <FaViber className='contacts__icon viber-violet' />*/}
-                    {/*    <span className='contacts__username'>*/}
-                    {/*        +{pageInfo.viber}*/}
-                    {/*    </span>*/}
-                    {/*</a>*/}
-
                     <a
                         href={`https://www.instagram.com/${pageInfo.instagram}/`}
                         target='_blank'
@@ -107,18 +95,6 @@ const Contacts = () => {
                             @{pageInfo.instagram}
                         </span>
                     </a>
-
-                    {/*<a*/}
-                    {/*    href={`https://www.facebook.com/profile.php?id=${pageInfo.facebookId}`}*/}
-                    {/*    target='_blank'*/}
-                    {/*    className='contacts__social'*/}
-                    {/*    rel='noreferrer'*/}
-                    {/*>*/}
-                    {/*    <BsFacebook className='contacts__icon facebook-blue' />*/}
-                    {/*    <span className='contacts__username'>*/}
-                    {/*        {pageInfo.facebookName}*/}
-                    {/*    </span>*/}
-                    {/*</a>*/}
                 </div>
             )}
         </>

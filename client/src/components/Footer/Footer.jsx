@@ -42,48 +42,30 @@ const Footer = () => {
                                 />
                             </Link>
                             <div className='footer__info'>
-                                <div className='footer__contacts'>
+                                {/*<div className='footer__contacts'>*/}
+                                <a
+                                    href={`tel:${pageInfo.phones[0]}`}
+                                    className='footer__tel footer__contacts'
+                                >
                                     <BsTelephone className='footer__icon footer__icon--accent' />
-                                    <a
-                                        href={`tel:${pageInfo.phones[0]}`}
-                                        className='footer__tel'
-                                    >
-                                        {pageInfo.phones[0]}
-                                    </a>
-                                </div>
-                                {/*<div className='footer__contacts'>*/}
-                                {/*    <BsTelephone className='footer__icon footer__icon--accent' />*/}
-                                {/*    <a*/}
-                                {/*        href={`tel:${pageInfo.phones[1]}`}*/}
-                                {/*        className='footer__tel'*/}
-                                {/*    >*/}
-                                {/*        {pageInfo.phones[1]}*/}
-                                {/*    </a>*/}
-                                {/*</div>*/}
-                                {/*<div className='footer__contacts'>*/}
-                                {/*    <BsTelephone className='footer__icon footer__icon--accent' />*/}
-                                {/*    <a*/}
-                                {/*        href={`tel:${pageInfo.phones[2]}`}*/}
-                                {/*        className='footer__tel'*/}
-                                {/*    >*/}
-                                {/*        {pageInfo.phones[2]}*/}
-                                {/*    </a>*/}
+                                    {pageInfo.phones[0]}
+                                </a>
                                 {/*</div>*/}
                                 {pageInfo && (
                                     <>
-                                        <div className='footer__contacts'>
+                                        {/*<div className='footer__contacts'>*/}
+                                        <a
+                                            href={pageInfo.locationUrl}
+                                            target='_blank'
+                                            className='footer__tel footer__contacts'
+                                            rel='noreferrer'
+                                        >
                                             <ImLocation className='contacts__icon contacts__icon--accent' />
-                                            <a
-                                                href={pageInfo.locationUrl}
-                                                target='_blank'
-                                                className='footer__tel'
-                                                rel='noreferrer'
-                                            >
-                                                <p className='contacts__tel'>
-                                                    {pageInfo.locationText}
-                                                </p>
-                                            </a>
-                                        </div>
+                                            <p className='contacts__tel'>
+                                                {pageInfo.locationText}
+                                            </p>
+                                        </a>
+                                        {/*</div>*/}
                                         <div className='footer__contacts'>
                                             <a
                                                 href={`https://www.instagram.com/${pageInfo.instagram}/`}
@@ -93,14 +75,6 @@ const Footer = () => {
                                             >
                                                 <BsInstagram className='footer__icon inst-pink' />
                                             </a>
-                                            {/*<a*/}
-                                            {/*    href={`https://www.facebook.com/profile.php?id=${pageInfo.facebookId}`}*/}
-                                            {/*    target='_blank'*/}
-                                            {/*    className='footer__social'*/}
-                                            {/*    rel='noreferrer'*/}
-                                            {/*>*/}
-                                            {/*    <BsFacebook className='footer__icon facebook-blue' />*/}
-                                            {/*</a>*/}
                                             <a
                                                 href={`tg://resolve?domain=${pageInfo.telegram}`}
                                                 target='_blank'
@@ -109,14 +83,6 @@ const Footer = () => {
                                             >
                                                 <FaTelegramPlane className='footer__icon tg-blue' />
                                             </a>
-                                            {/*<a*/}
-                                            {/*    href={`viber://chat/?number=%2B${pageInfo.viber}`}*/}
-                                            {/*    target='_blank'*/}
-                                            {/*    className='footer__social'*/}
-                                            {/*    rel='noreferrer'*/}
-                                            {/*>*/}
-                                            {/*    <FaViber className='footer__icon viber-violet' />*/}
-                                            {/*</a>*/}
                                         </div>
                                     </>
                                 )}
