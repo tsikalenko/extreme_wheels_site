@@ -61,9 +61,22 @@ const RegistrationForm = () => {
     };
 
     const onSubmit = (data) => {
+        let dataHTML = '';
+        for (const key in data) {
+            dataHTML += `${key}: ${data[key]}</br>`;
+        }
         const letterHtml =
             eventInfo.letterHtml +
             `
+            </br>
+            </br>
+            Данні бронювання: 
+            </br>
+            Дата тренування: ${eventInfo.startDate}
+            </br>
+            Початок тренування: ${eventInfo.startTime}
+            </br>
+            ${dataHTML}
             <a 
                 href='https://www.google.com/calendar/event?action=TEMPLATE&text=${
                     eventInfo.title
