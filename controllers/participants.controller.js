@@ -75,7 +75,7 @@ class ParticipantsController {
             if (participant) {
                 return res.json(participant);
             }
-            return res.status(400).json({ message: 'Event not found' });
+            return res.status(400).json({ message: 'Participant not found' });
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
@@ -89,7 +89,9 @@ class ParticipantsController {
                 if (event) {
                     return res.json(event);
                 }
-                return res.status(400).json({ message: 'Event not found' });
+                return res
+                    .status(400)
+                    .json({ message: 'Participant not found' });
             }
             return res.status(400).json({
                 message: 'You have not permission for this response',
@@ -106,7 +108,9 @@ class ParticipantsController {
                 const event = await Participants.findOne({ _id });
 
                 if (!event) {
-                    return res.status(400).json({ message: 'Event not found' });
+                    return res
+                        .status(400)
+                        .json({ message: 'Participant not found' });
                 }
 
                 const filter = { _id };
@@ -138,9 +142,32 @@ class ParticipantsController {
         try {
             const { participantId } = req.params;
 
+            const participant = await Participants.findOne({
+                _id: participantId,
+            });
+
             const result = await Participants.deleteOne({ _id: participantId });
 
             if (result.deletedCount > 0) {
+                const eventId = participant.eventId.toString();
+                const event = await Events.findOne({
+                    _id: eventId,
+                });
+
+                const eventsParticipant = await Participants.find({ eventId });
+                if (event.maxQuantity > eventsParticipant.length) {
+                    const filter = { _id: eventId };
+                    const update = {
+                        enable: true,
+                    };
+
+                    await Events.findOneAndUpdate(filter, update, {
+                        new: true,
+                    });
+                }
+                await sendToTelegram(
+                    createLeadMsg(participant.data, event, true)
+                );
                 return res.json({ message: 'Participant was deleted' });
             }
 
