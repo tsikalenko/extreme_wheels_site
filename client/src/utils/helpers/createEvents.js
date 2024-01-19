@@ -11,7 +11,7 @@ export const createEvents = (data) => {
                 : date.getMonth() + 1
         }-${date.getDate() <= 9 ? '0' + date.getDate() : date.getDate()}`;
         const newEvent1 = {
-            title: 'Персональне ендуро тренування',
+            title: '9:30 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
             startTime: '09:30',
@@ -22,7 +22,7 @@ export const createEvents = (data) => {
             img: 'https://res.cloudinary.com/dd3fd4eey/image/upload/v1701766811/main_gallery/main_gallery_6.jpg',
             letterSubject: 'Персональне эндуро тренування',
             letterHtml:
-                'Дякуємо що забронювали тренування!<br/>Найближчим часом ми з вамы зв`яжемось!',
+                'Дякуємо що забронювали тренування!<br/>Найближчим часом ми з Вами зв`яжемось!',
             fields: [
                 {
                     name: 'Імя',
@@ -35,6 +35,7 @@ export const createEvents = (data) => {
                 {
                     name: 'Комментар',
                     description: '',
+                    isRequired: false,
                 },
             ],
             maxQuantity: 1,
@@ -42,7 +43,7 @@ export const createEvents = (data) => {
             enable: true,
         };
         const newEvent2 = {
-            title: 'Персональне ендуро тренування',
+            title: '13:00 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
             startTime: '13:00',
@@ -53,7 +54,7 @@ export const createEvents = (data) => {
             img: 'https://res.cloudinary.com/dd3fd4eey/image/upload/v1701766811/main_gallery/main_gallery_6.jpg',
             letterSubject: 'Персональне эндуро тренування',
             letterHtml:
-                'Дякуємо що забронювали тренування!<br/>Найближчим часом ми з вамы зв`яжемось!',
+                'Дякуємо що забронювали тренування!<br/>Найближчим часом ми з Вами зв`яжемось!',
             fields: [
                 {
                     name: 'Імя',
@@ -66,6 +67,7 @@ export const createEvents = (data) => {
                 {
                     name: 'Комментар',
                     description: '',
+                    isRequired: false,
                 },
             ],
             maxQuantity: 1,

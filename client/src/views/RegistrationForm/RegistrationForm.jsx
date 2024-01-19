@@ -40,7 +40,7 @@ const RegistrationForm = () => {
                     type='text'
                     className='edit__input edit__input--text'
                     {...register(`${field.name}`, {
-                        required: true,
+                        required: field.isRequired ? field.isRequired : true,
                     })}
                 />
                 {errors[field.name]?.type === 'required' && (
