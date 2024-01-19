@@ -8,9 +8,16 @@ const CustomCalendar = ({ events, type }) => {
     const navigate = useNavigate();
 
     const createEventList = () => {
+        console.log(events);
         return events.map((event) => ({
             id: event._id,
-            color: '#808000',
+            color: `${
+                event.enable
+                    ? '#808000'
+                    : event.freeSlots === 0
+                    ? '#cc5500'
+                    : '#730000'
+            }`,
             title: event.title,
             from: event.startDate + 'T' + event.startTime + ':00+00:00',
             to: event.endDate + 'T' + event.endTime + ':00+00:00',
