@@ -6,6 +6,7 @@ import { createParticipant } from '../../api/paticipantsAPI';
 
 import '../../utils/styles/_edit.scss';
 import '../../utils/styles/_utils.scss';
+import { BeatLoader } from 'react-spinners';
 
 const RegistrationForm = () => {
     const { eventId } = useParams();
@@ -26,7 +27,7 @@ const RegistrationForm = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors, isSubmitting, isDirty, isValid, isSubmitted },
+        formState: { errors, isSubmitting },
     } = useForm({ mode: 'onChange' });
 
     const renderFields = () => {
@@ -60,7 +61,7 @@ const RegistrationForm = () => {
         return startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
     };
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         let dataHTML = '';
         for (const key in data) {
             dataHTML += `${key}: ${data[key]}</br>`;
@@ -101,20 +102,18 @@ const RegistrationForm = () => {
                 Додати в мій Google Calendar
             </a>`;
 
-        (async () => {
-            try {
-                await createParticipant({
-                    eventId,
-                    email: data.email,
-                    letterSubject: eventInfo.letterSubject,
-                    letterHtml: letterHtml,
-                    data,
-                });
-                navigate('/gratitude');
-            } catch (err) {
-                setIsErrorLoading(true);
-            }
-        })();
+        try {
+            await createParticipant({
+                eventId,
+                email: data.email,
+                letterSubject: eventInfo.letterSubject,
+                letterHtml: letterHtml,
+                data,
+            });
+            navigate('/gratitude');
+        } catch (err) {
+            setIsErrorLoading(true);
+        }
     };
 
     return (
@@ -172,14 +171,13 @@ const RegistrationForm = () => {
                         <button
                             type='submit'
                             className='button button--accent'
-                            disabled={
-                                !isDirty ||
-                                !isValid ||
-                                isSubmitting ||
-                                isSubmitted
-                            }
+                            disabled={isSubmitting}
                         >
-                            Зарееструватися
+                            {isSubmitting ? (
+                                <BeatLoader color='#808000' />
+                            ) : (
+                                'Зарееструватися'
+                            )}
                         </button>
                     </form>
                 </div>

@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import Main from '../../views/Main';
 import Contacts from '../../views/Contacts';
 import AllServices from '../../views/AllServices';
-import TeamBuilding from '../../views/TeamBuilding';
 import EditMain from '../../views/EditMain';
 import EditAllServices from '../../views/EditAllServices';
 import EditTeamBuilding from '../../views/EditTeamBuilding';
@@ -36,7 +35,6 @@ const Routing = () => {
                 element={<Schedule calendar={true} isPage={true} />}
             />
             <Route path='/all-courses' element={<AllServices />} />
-            <Route path='/team-building' element={<TeamBuilding />} />
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/events/'>
                 <Route path=':eventId' element={<RegistrationForm />} />

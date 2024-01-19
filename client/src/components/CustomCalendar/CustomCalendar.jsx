@@ -8,7 +8,6 @@ const CustomCalendar = ({ events, type }) => {
     const navigate = useNavigate();
 
     const createEventList = () => {
-        console.log(events);
         return events.map((event) => ({
             id: event._id,
             color: `${
