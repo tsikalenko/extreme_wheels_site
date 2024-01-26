@@ -4,10 +4,11 @@ export const createEvents = (data) => {
     const { fields } = data;
     const { startDate, days } = fields;
     const date = new Date(startDate);
+    // console.log(date, date.getMonth() + 1);
     for (let i = 0; i < days; i++) {
         const styledDate = `${date.getFullYear()}-${
-            date.getMonth() + 1 <= 9
-                ? '' + date.getMonth() + 1
+            date.getMonth() + 1 < 10
+                ? '0' + (date.getMonth() + 1)
                 : date.getMonth() + 1
         }-${date.getDate() <= 9 ? '0' + date.getDate() : date.getDate()}`;
         const newEvent1 = {
