@@ -11,7 +11,7 @@ export const createEvents = (data) => {
                 : date.getMonth() + 1
         }-${date.getDate() <= 9 ? '0' + date.getDate() : date.getDate()}`;
         const newEvent1 = {
-            title: '9:30 Персональне ендуро тренування',
+            title: '10:00 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
             startTime: '10:00',
@@ -43,7 +43,7 @@ export const createEvents = (data) => {
             enable: true,
         };
         const newEvent2 = {
-            title: '13:00 Персональне ендуро тренування',
+            title: '13:30 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
             startTime: '13:30',
