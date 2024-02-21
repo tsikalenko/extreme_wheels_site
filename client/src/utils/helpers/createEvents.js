@@ -14,9 +14,9 @@ export const createEvents = (data) => {
             title: '9:30 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
-            startTime: '09:30',
+            startTime: '10:00',
             endDate: styledDate,
-            endTime: '12:30',
+            endTime: '13:00',
             description:
                 'Персональне ендуро тренування з тренером на нашому мотоциклі з повним комплектом спорядження',
             img: 'https://res.cloudinary.com/dd3fd4eey/image/upload/v1701766811/main_gallery/main_gallery_6.jpg',
@@ -46,9 +46,9 @@ export const createEvents = (data) => {
             title: '13:00 Персональне ендуро тренування',
             price: 3000,
             startDate: styledDate,
-            startTime: '13:00',
+            startTime: '13:30',
             endDate: styledDate,
-            endTime: '16:00',
+            endTime: '16:30',
             description:
                 'Персональне ендуро тренування з тренером на нашому мотоциклі з повним комплектом спорядження',
             img: 'https://res.cloudinary.com/dd3fd4eey/image/upload/v1701766811/main_gallery/main_gallery_6.jpg',
